@@ -1,0 +1,29 @@
+@model DESAFIO.Models.estudante
+
+@{
+    ViewData["Title"] = "Editar informações";
+}
+
+<h2>Editar informações do estudante</h2>
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="matricula" />
+            <div class="form-group">
+                <label asp-for="nome" class="control-label">Nome</label>
+                <input asp-for="nome" class="form-control" />
+                <span asp-validation-for="nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar para a lista</a>
+</div>
+

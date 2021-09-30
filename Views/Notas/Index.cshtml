@@ -1,0 +1,67 @@
+@model IEnumerable<DESAFIO.Models.notas>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Lista de notas</h2>
+
+<p>
+    <a asp-action="Create">Adicionar aluno</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Disciplina
+            </th>
+            <th>
+                Avaliação 1
+            </th>
+            <th>
+                Avaliação 2
+            </th>
+            <th>
+                Avaliação 3
+            </th>
+            <th>
+                Média
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estudante.nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nomeDisciplina)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.av1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.av2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.av3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.media)
+
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.codDisciplina">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.codDisciplina">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.codDisciplina">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

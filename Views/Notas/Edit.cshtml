@@ -1,0 +1,46 @@
+@model DESAFIO.Models.notas
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editar notas</h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="av1" class="control-label">Avaliação 1</label>
+                <input asp-for="av1" class="form-control" />
+                <span asp-validation-for="av1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="av2" class="control-label">Avaliação 2</label>
+                <input asp-for="av2" class="form-control" />
+                <span asp-validation-for="av2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="av3" class="control-label">Avaliação 3</label>
+                <input asp-for="av3" class="form-control" />
+                <span asp-validation-for="av3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="media" class="control-label">Média</label>
+                <input readonly="readonly" asp-for="media" class="form-control" />
+                <span asp-validation-for="media" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar para a lista</a>
+</div>
+

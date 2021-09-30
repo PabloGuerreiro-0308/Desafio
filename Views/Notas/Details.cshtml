@@ -1,0 +1,53 @@
+@model DESAFIO.Models.notas
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Nome do aluno
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.estudante.nome)
+        </dd>
+        <dt class="col-sm-2">
+            Disciplina
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.nomeDisciplina)
+        </dd>
+        <dt class="col-sm-2">
+            Avaliação 1
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.av1)
+        </dd>
+        <dt class="col-sm-2">
+            Avaliação 2
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.av2)
+        </dd>
+        <dt class="col-sm-2">
+            Avaliação 3
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.av3)
+        </dd>
+        <dt class="col-sm-2">
+            Média
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.media)
+        </dd class>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.codDisciplina">Editar</a> |
+    <a asp-action="Index">Voltar para a lista </a>
+</div>
